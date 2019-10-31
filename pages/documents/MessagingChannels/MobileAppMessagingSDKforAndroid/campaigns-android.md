@@ -133,6 +133,24 @@ identityList.add(monitoringIdentity);
 
 // Creating entryPoints object
 JSONArray entryPoints = new JSONArray();
+//
+// The next 3 lines are confusing developers. They give the impression that the entryPoints data will be available
+// in LiveEngage to match Engagements based on either URL or Section, and using language. This is not the case currently.
+// As currently implemented, the contents of each of the 3 lines below will appear in LiveEngage as section names exactly as
+// they are typed below - for example section 'http://www.liveperson-test.com', section 'sec://food' and section 'lang://De'
+//
+// So, either the lines below should be changed to highlight that entryPoints simply match to sections within LiveEngage
+// and the examples should be changed to something more meaningful
+//
+// OR - better yet
+//
+// The parsing within LiveEngage of entryPoints should be fixed to match what this example suggests was the original intention
+// with the
+// http line getting presented in LiveEngage as the current URL
+// sec line(s) getting presented in LiveEngage as the current section(s) 
+// lang line getting presented in LiveEngage as the current/desired language of the visitor
+//
+// Whichever is the outcome - some clarification of how the entryPoints are used is needed. 
 entryPoints.put("http://www.liveperson-test.com");
 entryPoints.put("sec://Food");
 entryPoints.put("lang://De");
