@@ -11,6 +11,7 @@ indicator:
 ### Introduction
 
 The following document outlines the Brand Stats Service API. This API presents the status of system test proceedures in a brand scope.
+Details on the tests that are avaialble can be found in the [here](/BrandStatusService_test-details.html)
 
 **Service Domain**
 Please ask your account team to indicate which domain of the below domains your account is in. This can also be seen in the URL in your production account when accessing your Conversational Cloud / Conversation Manager interface.
@@ -53,13 +54,15 @@ Brand Stats Service requires an external appKey that shall be validated against 
 
 ```bash
 curl -X GET \
-  https://https://z1.bstats.liveperson.net/api/account/le56105173/bstats \
-  -H 'accept: */*' \
-  -H 'authorization: Basic QlNUQVRTOlpCdGtCd2VqZDBjR2hfV1U=' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -H 'postman-token: 13e20bb3-d36b-5c94-b9f2-64ad09999e07'
+ https://bstats-qa-int.dev.lprnd.net/api/account/le74292582/bstats \
+ -H 'accept: */*' \
+ -H 'authorization: OAuth .....
+ -H 'cache-control: no-cache' \
+ -H 'content-type: application/json' \
 ```
+
+The image below presents an example GET request performed in Postman
+<img class="fancyimage" style="width:600px" src="img/bstats_curl_postman.png">
 
 **Response**:
 
