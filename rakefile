@@ -1,21 +1,39 @@
 require 'html-proofer'
 
-task :test_external do
+task :test_internal_links do
   sh "bundle exec jekyll build"
   options = {
-    :http_status_ignore => [429],
-    :external_only => true,
+    :disable_external => true,
+    :checks_to_ignore => ["ImageCheck", "ScriptCheck"],
+    :empty_alt_ignore => true,
+    :error_sort => :status,
   }
-  puts "Checking external links..."
+  puts "Checking interal links only..."
   HTMLProofer.check_directory("./_site", options).run
 end
 
-task :test_internal do
+task :test_external_links do
   sh "bundle exec jekyll build"
   options = {
-    :http_status_ignore => [429],
-    :disable_external => true,
+    :http_status_ignore => [429, 302],
+    :external_only => true,
+    :checks_to_ignore => ["ImageCheck", "ScriptCheck"],
+    :empty_alt_ignore => true,
+    :error_sort => :status,
+    :cache => {
+      :timeframe => '30d'
+    },
   }
-  puts "Checking internal links..."
+  puts "Checking external links only..."
+  HTMLProofer.check_directory("./_site", options).run
+end
+
+task :test_all do
+  sh "bundle exec jekyll build"
+  options = {
+    :http_status_ignore => [429, 302],
+    :error_sort => :status,
+  }
+  puts "Checking entire site for script, image and link errors..."
   HTMLProofer.check_directory("./_site", options).run
 end

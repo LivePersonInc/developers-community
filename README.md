@@ -203,6 +203,21 @@ You have two options to run the site locally after the first install:
 
 See the `_template` folder above for a complete template of a simple REST API. Other templates will follow in the future. However, if you have a unique API to document or need further assistance, please reach out to Product Communications *before* starting to write your document so that we can advise on its structure.
 
+### Testing the site for errors
+
+If you would like to test the validity of this site, you can run one of the following commands:
+
+```rake test_internal_links```
+
+This will output a list of all the broken internal links
+
+```rake test_external_links```
+
+This will output a list of all the broken external links
+
+```rake test_all```
+
+This will output a list of all broken external links, scripts, images, and html accessibility standards
 
 ### Licensing
 

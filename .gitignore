@@ -10,3 +10,5 @@ _algolia_api_key
 .vscode
 vendor
 node_modules/
+tmp/.htmlproofer
+_scripts/docOutputError.log
