@@ -42,6 +42,13 @@ botContext.printDebugMessage("channel used by the user is: " + channel);
 ### Get user platform ID
 
 Get User Platform Id is used to get the user’s unique platform ID.
+// === REQUEST FOR IMPROVED DOCUMENTATION ===
+// Please explain what the platform ID is: 
+// - Does it identify the platform of the user, or the user ID within the platform? 
+// - What is a platform in this context (how is a platform different from a channel)?
+// Please provide examples (i.e. WhatsApp number?, Facebook id?).
+// === END OF REQUEST FOR IMPROVED DOCUMENTATION ===
+
 
 | Function Name | Arguments | Returns |
 | --- | --- | --- |
