@@ -279,7 +279,7 @@ Example for Mandatory+Standard+Custom Claims JWT:
 
 *	The encryption should use RSA algorithm.
 
-*	JWE header should include header name “alg" with the value: RSA_OAEP_256.
+*	JWE header should include header name “alg" with the value: RSA-OAEP-256.
 
 ### OpenID JWT Signing
 
