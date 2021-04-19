@@ -51,6 +51,7 @@ The variable can be used anywhere in conversation builder using the following va
 
 The Conversation Context Service is useful in storing any context information gathered in a bot that you may want to use in a routing policy. For instance you may want to set the intent detected by a bot and then use it for any routing policy.
 
+====> PLEASE UPDATE the below section on using Conversation Context Service API  from Conversation Builder. Why use an API Integration, if you can use the built-in scripting functions in CB for managing the Conversation Context Service?  See https://developers.liveperson.com/conversation-builder-scripting-functions-manage-the-conversation-context-service.html    <=====
 You can call the Conversation Context Service API by setting up an [Integration](conversation-builder-integrations-api-integrations.html) with the [Conversation Context Service API](maven-context-warehouse-context-session-store.html) details. You may use the conversation id to store the session state, and pass the conversation id in the Recommendation API call. 
 
 <img class="fancyimage" width="500" src="img/maven/Call Session Store APIs from CB.png">
