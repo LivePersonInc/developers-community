@@ -51,6 +51,8 @@ You have to agree to Data Disclaimer in order to use the services of the bot con
 
 For validation of the credentials provided, you can now perform a test connection request to see if everything that you have provided is working and reachable. You can click on the button "Test Connection" to see if connection succeed or fail. If it has suceeded, you're done!
 
+Please note that your LivePerson Function should be capable of handling unsupported messages or as your design pleases. This will ensure the success of the call to the API of Lex for testing the connection.
+
 ### Payload Information
 
 The following payload content will be recieved from the Function during a conversation with the assigned bot.
@@ -123,6 +125,31 @@ To provide some more information and context alongside the messages to the consu
 const payload = {
   messages: ["Hi i am an intent information example"],
   context: {
+    intentId: "intent-info-example",
+    intentName: "Intent information example.",
+    confidenceScore: 1,
+  },
+};
+```
+
+If you have alternate intents data that you want to pass into the bot metadata you can also add this information in the response context via property `alternativeIntents` which is an array of objects(containing same properties as the main intent). The example of passing alternative intents alongside the main intent is as follow:
+
+```javascript
+const payload = {
+  messages: ["Hi i am an intent information example"],
+  context: {
+    alternativeIntents: [
+      {
+        intentId: "alternative-intent-info-example-1",
+        intentName: "alternative-Intent information example 1.",
+        confidenceScore: 0.6,
+      },
+      {
+        intentId: "alternative-intent-info-example-2",
+        intentName: "alternative-Intent information example 2.",
+        confidenceScore: 0.4,
+      },
+    ],
     intentId: "intent-info-example",
     intentName: "Intent information example.",
     confidenceScore: 1,
@@ -223,21 +250,20 @@ const payload = {
 
 During a conversation, it is possible to trigger a different LivePerson Function. This provides a way to run additional custom logic with a bot.
 
-To invoke a different LivePerson Function, we use the `action` key in the response object as we did for a transfer (see example above). 
+To invoke a different LivePerson Function, we use the `action` key in the response object as we did for a transfer (see example above).
 
-| key          | value                                                      | notes                     |
-| ------------ | ---------------------------------------------------------- | ------------------------- |
-| action       | INVOCATION                                                 | case sensitive, mandatory |
-| lambdaUuid   | lambda UUID of LivePerson Function                         | case sensitive, mandatory |
-| payload      | content that will be sent to the LivePerson Function       | case sensitive            |
-| failOnError  | boolean that decides if bot escalates on failed invocation | case sensitive            |
+| key         | value                                                      | notes                     |
+| ----------- | ---------------------------------------------------------- | ------------------------- |
+| action      | INVOCATION                                                 | case sensitive, mandatory |
+| lambdaUuid  | lambda UUID of LivePerson Function                         | case sensitive, mandatory |
+| payload     | content that will be sent to the LivePerson Function       | case sensitive            |
+| failOnError | boolean that decides if bot escalates on failed invocation | case sensitive            |
 
-To retrieve the ***lambdaUuid*** of your LivePerson Function follow [this guide](liveperson-functions-external-invocations-client-credentials.html#step-4-get-the-lambda-uuid-from-functions)
+To retrieve the **_lambdaUuid_** of your LivePerson Function follow [this guide](liveperson-functions-external-invocations-client-credentials.html#step-4-get-the-lambda-uuid-from-functions)
 
 In addition, it is possible to send your own payload to the function. Set your content inside the **payload** parameter.
 
 The bot does not escalate on a failed invocation by default. To enable this, set the additional parameter **failOnError** to **true**.
-
 
 ```javascript
 const payload = {
@@ -527,14 +553,14 @@ Below is an example of what the response JSON from the LivePerson Function shoul
 ```javascript
 const payload = {
   messages: [
-    'Unfortunately I am unable to help you with this query. Have a nice day.'
+    "Unfortunately I am unable to help you with this query. Have a nice day.",
   ],
   context: {
-    action: 'CLOSE_CONVERSATION',
+    action: "CLOSE_CONVERSATION",
     actionParameters: {
-      withoutPcs: true // tell the connector not to trigger post conversation survey, instead close entire conversation
-    }
-  }
+      withoutPcs: true, // tell the connector not to trigger post conversation survey, instead close entire conversation
+    },
+  },
 };
 ```
 

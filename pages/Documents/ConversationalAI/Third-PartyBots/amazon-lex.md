@@ -74,7 +74,7 @@ A _service account_ is a **prerequisite** for setting up the above config. Docum
 {: .important}
 You have to agree to Data Disclaimer from now onward in order to use the services of bot connector. For that you can click on the checkbox "I agree to the Data Disclaimer"
 
-For validation of the credentials provided, you can now perform a test connection request to see if everything that you have provided is working and reachable. You can click on the button "Test Connection" to see if connection succeed or fail as shown in Figure 1.2 and 1.3 respectively.
+For validation of the credentials provided, you can now perform a test connection request to see if everything that you have provided is working and reachable. You can click on the button "Test Connection" to see if connection succeed or fail as shown in Figure 1.2 and 1.3 respectively. Please note that your bot should be capable of handling unsupported messages either via [fallback intents](https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html) or as your design pleases. This will ensure the success of the call to the API of Lex for testing the connection.
 
 <img class="fancyimage" style="width:600px" src="img/lex/connection-success.png">
 
@@ -552,14 +552,13 @@ To close the conversation without triggering the post conversation survey use fo
 
 Figure 10.3 Lex Example Close Conversation without PCS payload
 
-
 ### Invoke LivePerson Function
 
-During a conversation, it is possible to trigger a LivePerson Function that is deployed to the [LivePerson Functions](liveperson-functions-overview.html)  (Function as a Service) platform. This provides a way to run custom logic with a bot.
+During a conversation, it is possible to trigger a LivePerson Function that is deployed to the [LivePerson Functions](liveperson-functions-overview.html) (Function as a Service) platform. This provides a way to run custom logic with a bot.
 
 The action field needs to be set to **INVOCATION** to instruct the connector to invoke the specified LivePerson Function.
 
-It is also required to provide the **lambdaUuid**, of the function that should be invoked, in `data`. 
+It is also required to provide the **lambdaUuid**, of the function that should be invoked, in `data`.
 To retrieve the Lambda UUID of your LivePerson Function follow [this guide](liveperson-functions-external-invocations-client-credentials.html#step-4-get-the-lambda-uuid-from-functions)
 
 In addition, it is possible to send your own payload to the function. Set your content inside the **payload** key.

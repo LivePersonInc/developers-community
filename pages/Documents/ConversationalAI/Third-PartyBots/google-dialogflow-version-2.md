@@ -58,34 +58,14 @@ The following Dialogflow V2 information should be provided to LivePerson:
   <tr>
     <td>User private key</td>
     <td>Private key of the IAM Account, please keep the formatting as provided by Google</td>
-    <td>-----BEGIN PRIVATE KEY-----
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        WQpmxLe3h4XeslUI7Eowz2sypu72Q9+j1xOEtc9asl37wLac/zo0xy7wNxnDau+x
-        rOOTX/VAniuByeZ98mIRZQBxz6qInJ4el8PFT7eJbC0+IMfiljqrMDqy/N4CR2gE
-        qqCVtY4kEWGr6a5IA/IBFENFPlADbY/TRBbInvakA1iqWj5yCOslGo7SmwleuJ6U
-        kUbjdmBI937k0AFWrbKAjNXLuF174Qx7B7NQm9G6iud+nGu0XwH2g2FPEQkvA8YL
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        VZ10hvsFAgMBAAECggEAOEnJpSNijvHCbV1GIBInxpqNiMCENf+ZDMeQqs9Tbdmh
-        CxQrS/pls2bkn6s/VNBNfY7GU9Sn7qgEzUycvu3SpID95vfQ+T4hrk5hLpKijQr9
-        Wv8aM8eqy0/I1ECn6Lb98WUaUfQVj7YctawoNdTjhxij0xCxY1hmVVQ4CdTf0av6
-        irukA5ySYPR3pahSMYwfnCgnRMLtLFX2NqvMFbUvwDpYJGE6h9k+Pv74Uyw3heEN
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        K3ASHyQ9v77+F1KaqR/wog3LUzSJtD0qLRVt0pmyKQKBgQDkvS8a29/dJvlQL+AY
-        NekZpgZ+zNXTPqiXRXyfvDBBJO4eFd4XQlZPCT/Iw5gT9mWzOL9WKxs0ImRrRojZ
-        asOn+BlXfeVZWEpmpvfXYnKwgpm2+sqOjyRhGEovC8yLA8PaDWKgtwPpb+MCzAF3
-        zTMT8UdCE4IFmusDxGIypQjG1wKBgQC4EQMru2806Jadd037TLFY7FoUB5JJPVA1
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        ZSnKi8tBU1u8+JY/sWniyyahFNDMDiKkmEd6M/DsM2N/RQZeqXi5R9HSC3INn175
-        bDP7tpg9gwKBgHtby9ugWMrcCfjE2QY1jNDYSQh5T5ftYt6yCtPameuIDyMKiAvj
-        KsjVJCER2yJo79AH+qht9u3W3nE8SPF4MqyTkJcuvlHA298gjOkLnu6ygFO+TR80
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        lStr0CKK42MErzQxFzO8VMg982DG/mW+TpaaMRP7yxXVLxUh3/d9aoq+fbzVnudr
-        Y13nJnR6+RPj8Qv2zP39ClwCfGx8rkw9SOMl8pL11kD4Zc1VHzzkDytFmOge2cDO
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        IFRnWV9jafiw2t92CY9mRzqF5puk8iRtMiCRjy3u4L+RHdvYkZPqO9CZUPvq9t0q
-        q+J780stgv56BE7TAuIjRPkN+GPcqnm69qQvJdzSPc5dw5ZmM8b5TtIvlipzjU89
-        BSioVh/nHPX2QX2MKSbue+k=
-        -----END PRIVATE KEY-----</td>
+    <td>
+            -----BEGIN PUBLIC KEY-----<br />
+            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/HqnexoEA38Gl1Oqpdmx8vTpb
+            /cck+/OQddeak8cwMM0GJB7ueNQICw9O1jSR5nMb5qCGheEYW3akz9b2cucGzx2t
+            ZiyZpyOxtkvBNiD0eoB1L5arCyy4Foa2z1vfq6TSwnJFehn5DeCFpAviUS2jIDPU
+            cyADqtL+DnALuNDy8wIDAQAB
+            <br />-----END PUBLIC KEY-----
+    </td>
   </tr>
   <tr>
     <td>Google Cloud scopes</td>
@@ -123,7 +103,7 @@ Figure 1.2
 {: .important}
 You have to agree to Data Disclaimer from now onward in order to use the services of bot connector. For that you can click on the checkbox "I agree to the Data Disclaimer"
 
-For validation of the credentials provided, you can now perform a test connection request to see if everything that you have provided is working and reachable. You can click on the button "Test Connection" to see if connection succeed or fail as shown in Figure 1.4 and 1.5 respectively.
+For validation of the credentials provided, you can now perform a test connection request to see if everything that you have provided is working and reachable. You can click on the button "Test Connection" to see if connection succeed or fail as shown in Figure 1.4 and 1.5 respectively. Please note that your bot should be capable of handling unsupported messages either via [fallback intents](https://cloud.google.com/dialogflow/es/docs/intents-default) or as your design pleases. This will ensure the success of the call to the API of Lex for testing the connection.
 
 <img class="fancyimage" style="width:600px" src="img/dialogflowversion2/wizard_success.png">
 
@@ -548,19 +528,18 @@ To close a conversation without triggering a post conversation survey, please ad
 
 ### Invoke LivePerson Function
 
-During a conversation, it is possible to trigger a LivePerson Function that is deployed to the [LivePerson Functions](liveperson-functions-overview.html)  (Function as a Service) platform. This provides a way to run custom logic with a bot.
+During a conversation, it is possible to trigger a LivePerson Function that is deployed to the [LivePerson Functions](liveperson-functions-overview.html) (Function as a Service) platform. This provides a way to run custom logic with a bot.
 
 The method for triggering an invocation is similar to the transfer action in that the same "Actions and Parameters" field is utilised in the Dialogflow console.
 
 The action field needs to be set to **INVOCATION** to instruct the connector to invoke the sepecified LivePerson Function
 
-It is also required to provide the **lambdaUuid** of the function that should be invoked in parameters. 
+It is also required to provide the **lambdaUuid** of the function that should be invoked in parameters.
 To retrieve the Lambda UUID of your LivePerson Function follow [this guide](liveperson-functions-external-invocations-client-credentials.html#step-4-get-the-lambda-uuid-from-functions)
 
 In addition, it is possible to send your own payload to the function. Set your content inside the **payload** key.
 
 The bot does not escalate on a failed invocation by default. To enable this, set the additional parameter **failOnError** to **true**
-
 
 <img class="fancyimage" style="width:800px" src="img/dialogflowversion2/image_13.png">
 Figure 11.1
@@ -585,3 +564,7 @@ These attributes are **only** collected at the start of a conversation. Third-Pa
   }
 }
 ```
+
+### Limitations
+
+- Currently, We send all the intents received from Dialogflow V2 via `alternativeQueryResults`. This is only possible if Knowledge Connectors are enabled and set up, otherwise, this field will be empty until multiple responses for regular intents are supported. For more information, you can refer to the official documentation [here](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2beta1/DetectIntentResponse)
