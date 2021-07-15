@@ -28,6 +28,28 @@ When testing your bot and you get an error in the response, you will be able to 
 ## Dialog Flow V2 Invalid Action Body
 ## Description
 This error happens when the bot has an invalid body and the Google Dialog Flow V2 is unable to parse it. It can be a wrong parameter, a value, or a missing parameter. Even though it is shown as an error in the Third Party Bots, the bot gently ignores unknown actions and the conversation will continue.
+
+## Transfer Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `skill` is the required parameter and it has to be provided as a **String**
+- `agentId` is an optional parameter and if provided the value must be a **String**
+
+## Change TTR Action Error 
+## Description
+This error happens when the required parameter `ttrType` is either not provided or if provided the format of the value is not a **String**
+
+
+## Close Conversation Action Error
+## Description
+For this action there are no required parameters. When the withoutPcs optional parameter is provided the format should be **Boolean**
+
+## Faas Invocation Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `lambdaUuid` is a required parameter and it has not being provided as a **String** 
+- `payload` is a required parameter and it has not being provided as a **Object** 
+- `failOnError` is an optional parameter and it has not being provided as **Boolean** 
  
 #### Error Solution
 Please check [Change Time To Response of Conversation](third-party-bots-google-dialogflow-version-2.html#change-time-to-response-of-conversation)
@@ -81,6 +103,28 @@ Chat connector does not support quick replies.
 ## DialogFlow CX Invalid Action Body
 ## Description
 This error happens when the bot has an invalid body and the Google Dialog Flow CX is unable to parse it. It can be a wrong parameter, a value, or a missing parameter. Even though it is shown as an error in the Third Party Bots, the bot gently ignores unknown actions and the conversation will continue.
+
+## Transfer Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `skill` is the required parameter and it has to be provided as a **String**
+- `agentId` is an optional parameter and if provided the value must be a **String**
+
+## Change TTR Action Error 
+## Description
+This error happens when the required parameter `ttrType` is either not provided or if provided the format of the value is not a **String**
+
+
+## Close Conversation Action Error
+## Description
+For this action there are no required parameters. When the withoutPcs optional parameter is provided the format should be **Boolean**
+
+## Faas Invocation Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `lambdaUuid` is a required parameter and it has not being provided as a **String** 
+- `payload` is a required parameter and it has not being provided as a **Object** 
+- `failOnError` is an optional parameter and it has not being provided as **Boolean**
  
 #### Error Solution
 Please check [Change Time To Response of Conversation](third-party-bots-google-dialogflow-cx.html#change-time-to-response-of-conversation)
@@ -277,6 +321,28 @@ Chat connector does not support quick replies.
 ## Description
 This error happens when the bot has an invalid action body and Lex is unable to parse it. It can be a wrong parameter, a value, or a missing parameter. Even though it is showing as an error in the Third Party Bots, the bot gently ignores unknown actions and the conversation will continue.
 
+## Transfer Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `skill` is the required parameter and it has to be provided as a **String**
+- `agentId` is an optional parameter and if provided the value must be a **String**
+
+## Change TTR Action Error 
+## Description
+This error happens when the required parameter `ttrType` is either not provided or if provided the format of the value is not a **String**
+
+
+## Close Conversation Action Error
+## Description
+For this action there are no required parameters. When the withoutPcs optional parameter is provided the format should be **Boolean**
+
+## Faas Invocation Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `lambdaUuid` is a required parameter and it has not being provided as a **String** 
+- `payload` is a required parameter and it has not being provided as a **Object** 
+- `failOnError` is an optional parameter and it has not being provided as **Boolean**
+
 #### Error Solution
 Please check [Change Time To Response of Conversation](third-party-bots-amazon-lex.html#change-time-to-response-of-conversation)
  
@@ -362,6 +428,28 @@ Chat connector does not support quick replies.
 ## Invalid Action Body
 ## Description
 This error happens when the bot has an invalid action body and Faas is unable to parse it. It can be a wrong parameter, a value, or a missing parameter. Even though it is showing as an error in the Third Party Bots, the bot gently ignores unknown actions and the conversation will continue.
+
+## Transfer Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `skill` is the required parameter and it has to be provided as a **String**
+- `agentId` is an optional parameter and if provided the value must be a **String**
+
+## Change TTR Action Error 
+## Description
+This error happens when the required parameter `ttrType` is either not provided or if provided the format of the value is not a **String**
+
+
+## Close Conversation Action Error
+## Description
+For this action there are no required parameters. When the withoutPcs optional parameter is provided the format should be **Boolean**
+
+## Faas Invocation Action Error
+## Description
+This error happens when either one or multiple of the following conditions not met
+- `lambdaUuid` is a required parameter and it has not being provided as a **String** 
+- `payload` is a required parameter and it has not being provided as a **Object** 
+- `failOnError` is an optional parameter and it has not being provided as **Boolean**
  
 #### Error Solution
 Please check [Change Time To Response of Conversation](third-party-bots-custom-integration.htmll#change-time-to-response-of-conversation)
