@@ -40,7 +40,7 @@ Then, save that intent name to the Conversation Context Services conversation sc
 <img class="fancyimage" width="800" src="img/convorchestrator/co_dr_saveintent.png">
 
 ```javascript
-var intentTitle = botcontext.getDialogStarterIntent();
+var intentTitle = botContext.getDialogStarterIntent();
  
 var intentNamespace = botContext.getBotVariable('intentRoutingNamespace');
 botContext.setContextDataForConversation(intentNamespace, 'intent', intentTitle);
