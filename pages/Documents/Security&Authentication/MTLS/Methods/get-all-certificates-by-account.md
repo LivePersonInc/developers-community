@@ -23,7 +23,6 @@ This API gets all certificates from a specific account by account ID.
  |:------|        :--------  |
  |Authorization|    Contains token string to allow request authentication and authorization.  |
 
-**Request Body**
 
 
 **Path Parameters**
