@@ -32,18 +32,18 @@ The customer web app is based on an embedded LivePerson's Web-SDK. The web app c
 
 
 **Retrieving ID Token using 'Token Endpoint'**  
-In case using token endpoint which accepts a valid OAuth 2.0 code along with the clientID and secret information, response should include a vlaid ID Token. The token should contain user unique identifier and additional claims, encoded and signed as a [JWT](https://tools.ietf.org/html/rfc7519).
+In case using token endpoint which accepts a valid OAuth 2.0 code along with the clientID and secret information, response should include a valid ID Token. The token should contain user unique identifier and additional claims, encoded and signed as a [JWT](https://tools.ietf.org/html/rfc7519). The clientID and secret information are encoded in
+the Authorization header as per https://developers.liveperson.com/consumer-authentication-detailed-api.html#openid-connect-provider-op-development-details.
 
 Example of ID Token Request (made by LivePerson to your authorization server):
 
 ```http
 POST /oauth2/v3/token HTTP/1.1
 Host: www.customer.com
+Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 Content-Type: application/x-www-form-urlencoded
 
 code=3shshs92jsls/snxbxismNSsgHSVb&
-client_id=8819981768.lp-integration.customer.com&
-client_secret=fafadshdjkf943yehsjhed&
 redirect_uri=https://liveperson.net/oauth2/code_redirect&
 grant_type=authorization_code
 ```
