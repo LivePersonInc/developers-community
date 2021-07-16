@@ -559,7 +559,7 @@ Proactive Messaging service has retry mechanism internally on dependent services
 | variable  		  | 1550 char max length | SMS messages more than 160 chars may be sent as multiple messages |
 
 <strong>Is Whatsapp Rich template enabled for all accounts?</strong>
-To use Whatsapp Rich template via API/UI, reach out to Proactive team to get it enabled for the account. Currently the feature is not enabled for all accounts.
+Yes.
 
 <strong>What are different components of a Whatsapp template? Are all the components mandatory to be present in a rich template?</strong>
 There are four different components of a Whatsapp template
