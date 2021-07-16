@@ -120,7 +120,7 @@ This event triggers when the chat state is changed.
 
 #### conversationInfo
 
-This event triggers when the conversation data was changed, for example the conversation state.
+This event triggers when the conversation data was changed, for example the conversation state. For chat, the event data includes the current value of all known attributes. For messaging, the event data only contains the attributes that have changed.
 
 **Event Information**
 
