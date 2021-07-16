@@ -40,7 +40,7 @@ The usage of `setTimeout()` in LivePerson Functions must be handled with care.
 
 ### Logging
 
-* Logs written during invocation are limited to 10 entries, with an overall maximum of `5000` characters per lambda invocation. If this limit is exceeded, only 1 error log will be stored.
+* Logs written during invocation are limited to 10 entries, with an overall maximum of `6000` characters per lambda invocation (including log `message` and `extras`). If this limit is exceeded, only 1 error log will be stored.
 * Be aware that logs written during manual test invocations will not be written into the storage. Logs with a Debug level will only be shown on manual test invocations and not written into the storage.
 * The maximum timespan between Start Date and End Date of the `Investigate Function Logs` screen is restricted to 7 days.
 

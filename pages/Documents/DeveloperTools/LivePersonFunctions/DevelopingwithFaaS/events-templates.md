@@ -22,19 +22,19 @@ The amount of lambdas connected to a specific event is restricted and can be see
 
 Currently the following events are supported:
 
-|Event Name|Event Description|Event Source|Lambda Limit|
-|--- |--- |--- |--- |
+|Event Name|Event Description|Event Source|Lambda Limit|Supports Skills|
+|--- |--- |--- |--- |--- |
 |Chat Post Survey E-Mail Transcript|Triggered after a chat conversation is finished and CSAT survey has been submitted.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-post-chat-survey-transcripts.html).|Chat Service (Consumer Post chat survey)|10|
 |Conversational Command|Use this event to implement a Conversational Command that can be invoked from within the agent workspace in Conversational Cloud by typing "/".<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-conversational-commands.html). |Agent Workspace (NAW only)|30|
-|Messaging Conversation End|Triggered when the conversation is closed by agent/consumer/system.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|
-|Messaging Conversation Idle|Triggered when agent/consumer is not responsive or the conversation is in queue for over X secs/mins. Where Time X is configurable inside the Conversational Cloud UI, via the auto-messages feature.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|
-|Messaging Conversation Routing|Triggered when the conversation is transferred to a different skill.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|
-|Messaging Line in Off-Hours|Triggered when a conversation was *opened* during office-hours, but a new consumer line in the conversation is *written* during off-hours (essentially when a consumer sends an off-hour message). <br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|
-|Messaging New Conversation|Triggered for every new messaging conversation. **This event should not be used for routing. Use a routing bot instead.** <br/>For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|ControllerBot|1|
-|Messaging Participants Change|Triggered on every participant (agent) change (joins/leaves) a messaging conversation. <br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|
+|Messaging Conversation End|Triggered when the conversation is closed by agent/consumer/system.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|✅|
+|Messaging Conversation Idle|Triggered when agent/consumer is not responsive or the conversation is in queue for over X secs/mins. Where Time X is configurable inside the Conversational Cloud UI, via the auto-messages feature.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|✅|
+|Messaging Conversation Routing|Triggered when the conversation is transferred to a different skill.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|✅|
+|Messaging Line in Off-Hours|Triggered when a conversation was *opened* during office-hours, but a new consumer line in the conversation is *written* during off-hours (essentially when a consumer sends an off-hour message). <br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|✅|
+|Messaging New Conversation|Triggered for every new messaging conversation. **This event should not be used for routing. Use a routing bot instead.** <br/>For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|ControllerBot|1|✅|
+|Messaging Participants Change|Triggered on every participant (agent) change (joins/leaves) a messaging conversation. <br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html).|Conversational Exchange Service (Messaging Auto Messages)|1|✅|
 |Messaging Survey Ended|Triggered when a messaging post survey ended.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversation-survey.html).|Post Survey Bot|1|
 |Messaging Survey Started|Triggered when a messaging post survey started.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversation-survey.html).|Post Survey Bot|1|
-|Messaging TTR (Time to Respond)|Triggered when the consumer marks a response as an urgent response, unmarks a response as urgent, or the agent manually updates the response time.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html). |Conversational Exchange Service (Messaging Auto Messages)|1|
+|Messaging TTR (Time to Respond)|Triggered when the consumer marks a response as an urgent response, unmarks a response as urgent, or the agent manually updates the response time.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-messaging-conversations.html). |Conversational Exchange Service (Messaging Auto Messages)|1|✅|
 |No Event|Used for lambdas which only can be invoked externally|-||
 |Third-Party Bots Custom Integration|Triggered when a bot, which is using the Third-Party Bots' Custom Integration receives a message.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-conversational-ai.html).|Bot Connector|15|
 |Third-Party Bots Post Hook|Triggered when a bot, which is using the Third-Party Bots' Post Hooks receives a message. The function will be invoked after the vendor responded.<br/> For more details on how to set up a function like this one, please see details [here](liveperson-functions-integrations-conversational-ai.html).|Bot Connector|15|
@@ -43,6 +43,15 @@ Currently the following events are supported:
 
 
 Each of these events also has an event specific input (payload) associated with it, that the triggering system will provide at runtime. When using the [Invoke](function-as-a-service-deploying-functions.html#testing-your-function) screen, this payload is shown on the left-hand side. During development, the event payload of the `lambda` is visible on the right-hand side at the sidebar-tab. See the [Payload](function-as-a-service-developing-with-faas-overview.html#editor-sidebar) section for more information.
+#### Support for limiting invocations by skills
+
+Specific events can be restricted to only invoke a lambda on certain skills. This grants you more control over when your lambda is invoked, saving you lines of boilerplate code as-well-as reducing the number of meaningless invocations.
+
+<img src="img/faas-select-skill.png" alt="Functions select skill" style="width:100%;"/>
+
+To specify to which skill the lambda should react, simply select the skills during the creation/editing process of your lambda. By default, the lambda will react to all skills. If the lambda should only react to specific skills then there is a maximum of <b>10</b> skills that can be selected at any given time.
+
+<div class="important">Changing the skills of a lambda does not require a redeployment. The change is reflected within 5 minutes after saving.</div>
 
 ### Templates
 

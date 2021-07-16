@@ -116,3 +116,12 @@ To fine-tune the selected `lambda` logs, the following search parameters can be 
 After selecting the parameters, a click on the **SEARCH** button will show you the logs for the parameters set.
 
 <div class="important">The maximum timespan between <b>Start Date</b> and <b>End Date</b> is restricted to 7 days</div>
+
+### Downloading/Exporting Logs
+
+You can download lambda logs in the logging view. Simply select your lambda, the logging levels, and the relevant time span for which you want to download the logs. After confirmation of the action, the logs will be downloaded as a `.csv` file.
+
+<img src="img/faas-logs-download.png" alt="LivePerson Functions downloading logs" style="width:100%;"/>
+
+<div class="important">Beware that due to size limitations we limit the export the first <b>500</b> log entries within the given query</div>
+If you require additional logs beyond the limit we recommend reducing the scope of the log levels (e.g. only `error` logs) or specifying your time range more precisely.
