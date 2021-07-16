@@ -23,8 +23,8 @@ This section describes possible errors that can occur when invoking a lambda fro
 | 'com.liveperson.faas.es.missinglambda'              | Lambda does not exist                                                                                           |
 | 'com.liveperson.faas.handler.custom-failure'        | Lambda calls the callback with an Error like callback(new Error('whoops'), null)                                |
 | 'com.liveperson.faas.handler.runtime-exception'     | Lambda crashes because of implementation error, such as accessing a variable that is `undefined`.               |
-| 'com.liveperson.faas.handler.executiontime-exceeded' | Lambda exceeds execution time (see https://developers.liveperson.com/liveperson-functions-monitoring-logs.html) |
-| 'com.liveperson.faas.handler.log-limit-reached'     | Lambda exceeds log limits (see https://developers.liveperson.com/liveperson-functions-monitoring-logs.html)      |
+| 'com.liveperson.faas.handler.executiontime-exceeded' | Lambda exceeds execution time See [here](liveperson-functions-monitoring-logs.html) |
+| 'com.liveperson.faas.handler.log-limit-reached'     | Lambda exceeds log limits See [here](liveperson-functions-monitoring-logs.html)     |
 | 'com.liveperson.faas.fm.general'                    | General error, no specific reason                                                                               |
 | 'com.liveperson.faas.fm.unavailable'                | Could not reach/access remote system                                                                            |
 
@@ -40,5 +40,5 @@ This section describes possible errors that can occur when invoking a lambda fro
 | 405           |   Method Not Allowed                  | The request was using the wrong HTTP method                   |
 | 408           |   Request Timeout                     | Server did not receive the complete request by the client within the read limit |
 | 429           |   Ratelimit                           | The client exceeded the rate-limit, which is based on a per-account level            |
-| 500,502,504   |   Internal Server Error               | Unexpected Server Error, which can be temporarily                               |
+| 500,502,504   |   Internal Server Error               | Unexpected Server Error, which can be temporary                               |
 | 901           |   Error during lambda execution       | Lambda Execution failed due to an issue with the lambda coding. This can include runtime exception, exceeding processing window & returning of an error by the lambda                   |
