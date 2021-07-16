@@ -40,6 +40,7 @@ This method retrieves the chat events. The possible event types include: state, 
 | Name  | Description | Type/Value |
 | :--- | :--- | :--- |
 | from | The ID of the first event that is shown in the response. | numeric |
+| appkey | 721c180b09eb463d9f3191c41762bb68 | string |
 
 ### Response
 
