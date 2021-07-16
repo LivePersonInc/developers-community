@@ -39,7 +39,7 @@ This method returns the current average wait time in queue, per requested skill.
 | Name | Description | Type / Value | Required |
 | :----- | :-------------- | :-------------- | :--- |
 | v | version of API e.g. v=1 | numeric | default: 1 |
-| skills | When provided, the response will contain estimated wait time data for the requested skill Id/s. When not provided, the response will contain estimated wait time data for all skills of the account. If there is no data for the specified skill/s an object will be returned with value -1 for key: "ewt". You can provide one or more skill Ids. If you provide several skill IDs, they must be comma separated. Example: skills=4,15,3. | numeric, separated by commas | optional |
+| skills | When provided, the response will contain estimated wait time data for the requested skill Id/s. When not provided, the response will contain estimated wait time data for all skills of the account. If there is no data for the specified skill/s an object will be returned with value -1 for key: "estimatedWaitTime". You can provide one or more skill Ids. If you provide several skill IDs, they must be comma-separated. Example: skills=4,15,3. | numeric, separated by commas | optional |
 
 **Response Body**
 
