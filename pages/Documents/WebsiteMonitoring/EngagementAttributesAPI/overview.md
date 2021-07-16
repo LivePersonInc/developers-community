@@ -24,6 +24,8 @@ A few things you'll need to get started with this API:
 1. **Retrieve your domain**. Use the [LivePerson Domain API](agent-domain-domain-api.html) to retrieve this information by providing the following service name:
 
 	* smt
+	
+**SUGGESTION**: place an inline lookup widget here: enter account number, retrieve domain for this API/service name.
 
 2. In order to utilize this API, you will need an API key. [Here are the instructions on how to get that](guides-gettingstarted.html).
 
