@@ -263,6 +263,8 @@ This Engagement Attribute is used to collect personal information about your vis
 
 This information can be used to segment visitors and tailor an experience based on their attributes (age and gender). For example, you can exclude visitors that are too young for your service/product, or display different wording or offers based on the visitor’s gender.
 
+Note that setting the *firstname* and/or *lastname* attributes, will set the Visitor Name as visible in the agent console. First name and last name will be joined with a space to set the visitor name. 
+
 **Data structure**:
 
 | Name | Description  | Type  | Value/Example | Mandatory  | Supported in Authenticated Flow? |
